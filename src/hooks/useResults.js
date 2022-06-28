@@ -4,11 +4,11 @@ import yelp from '../api/yelp'
 export default () => {
   // state for resturant results
   const [results, setResults] = useState([])
+  // state for error message
   const [errorMessage, setErrorMessage] = useState('')
   
   // helper function to get yelpApi results
   const searchApi = async (searchTerm) => {
-    console.log('Hi there')
     try {
         const response = await yelp.get('/search', {
             params: {
